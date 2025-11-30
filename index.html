@@ -15,6 +15,25 @@
   .whatsapp-btn { display: inline-block; padding: 12px 20px; background: #25D366; color: white; font-size: 18px; font-weight: bold; border-radius: 8px; text-decoration: none;
   margin-top: 15px; }
 .whatsapp-btn:hover { background: #1ebe59; }
+  .menu-buttons {
+  margin-top: 20px;
+}
+.menu-buttons button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: #128C7E;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.menu-buttons button:hover {
+  background: #0e6f63;
+}
+
 </style>
   </head>
 
@@ -46,6 +65,15 @@
     </div>
 
 </div>
+<script>
+const phone = "917796360993"; // e.g. 919876543210
+
+function orderItem(item) {
+    const msg = `Hello! I would like to place an order for: ${item}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+}
+</script>
 
 <script>
 function saveDetails() {
