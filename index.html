@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cloud Kitchen Info</title>
 <style>
   body { font-family: Arial, sans-serif; padding: 20px; text-align: center; background: #fdf6e3; }
@@ -15,29 +15,36 @@
   .whatsapp-btn { display: inline-block; padding: 12px 20px; background: #25D366; color: white; font-size: 18px; font-weight: bold; border-radius: 8px; text-decoration: none;
   margin-top: 15px; }
 .whatsapp-btn:hover { background: #1ebe59; }
-
 </style>
-</head>
-<body>
+  </head>
 
-<div class="container">
-  <div id="formDiv">
-    <h2>Welcome to Ambika Bucket Biryani</h2>
-    <p>Please enter your details to view our menu:</p>
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="tel" id="mobile" placeholder="Mobile Number" required>
-    <button onclick="saveDetails()">Submit</button>
-  </div>
+  <body>
+    <div class="container">
+    <div id="formDiv">
+      <h2>Welcome to Ambika Bucket Biryani</h2>
+      <p>Please enter your details to view our menu:</p>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="mobile" placeholder="Mobile Number" required>
+      <button onclick="saveDetails()">Submit</button>
+    </div>
 
-  <div id="infoDiv" class="hidden">
+    <div id="infoDiv" class="hidden">
     <h2>Our Menu & Info</h2>
     <a href="Takeaway Menu PDF.pdf" target="_blank">View Menu</a>
     <a href="https://maps.app.goo.gl/HZ7ZXEFgrdVEFmXMA" target="_blank">Our Location</a>
     <a href="https://zomato.onelink.me/xqzv/yg71rbkg" target="_blank">Order on Zomato</a>
     <a href="rajathibare@ybl" target="_blank">Pay via UPI</a>
     <a href="https://wa.me/917796360993?text=Hello!%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="whatsapp-btn">Order via WhatsApp</a>
+    </div>
 
-  </div>
+    <div class="menu-buttons">
+  <h3>Quick Order Menu</h3>
+  <button onclick="orderItem('Chicken Dum Biryani:650ml Serves 1 person')">Chicken Dum Biryani: 650ml Serves 1 person – ₹160</button>
+  <button onclick="orderItem('Chicken Dum Biryani:1,000ml Serves 1-2 persons')">Chicken Dum Biryani: 1,000ml serves 1-2 persons – ₹250</button>
+  <button onclick="orderItem('Chicken Dum Biryani:2,000ml Serves 3-4 persons')">Chicken Dum Biryani: 2,000ml Serves 3-4 persons – ₹500</button>
+  <button onclick="orderItem('Chicken Dum Biryani:4,000ml Serves 6-7 persons')">Chicken Dum Biryani: 4,000ml Serves 6-7 persons – ₹800</button>
+    </div>
+
 </div>
 
 <script>
