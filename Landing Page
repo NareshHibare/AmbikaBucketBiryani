@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Kitchen Info</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; text-align: center; background: #fdf6e3; }
+  .container { max-width: 400px; margin: auto; }
+  input { padding: 10px; margin: 10px 0; width: 100%; }
+  button { padding: 10px 20px; background: #ff6f00; color: white; border: none; cursor: pointer; }
+  button:hover { background: #ff8f00; }
+  .hidden { display: none; }
+  a { display: block; margin: 10px 0; color: #1a73e8; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div id="formDiv">
+    <h2>Welcome to Ambika Bucket Biryani</h2>
+    <p>Please enter your details to view our menu:</p>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="mobile" placeholder="Mobile Number" required>
+    <button onclick="saveDetails()">Submit</button>
+  </div>
+
+  <div id="infoDiv" class="hidden">
+    <h2>Our Menu & Info</h2>
+    <a href="Takeaway Menu PDF.pdf" target="_blank">View Menu</a>
+    <a href="https://www.google.com/maps?q=Your+Kitchen+Location" target="_blank">Our Location</a>
+    <a href="https://zomato.onelink.me/xqzv/yg71rbkg" target="_blank">Order on Zomato</a>
+    <a href="upi://pay?pa=yourupiid@bank&pn=YourKitchen" target="_blank">Pay via UPI</a>
+  </div>
+</div>
+
+<script>
+function saveDetails() {
+    const name = document.getElementById('name').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    if(!name || !mobile) {
+        alert('Please enter both name and mobile number!');
+        return;
+    }
+    
+    // Save data to Google Sheet via Google Forms (simplest method)
+    const formURL = "https://forms.gle/PtQQSudFWQFgdV8w7";
+    const data = new URLSearchParams();
+    data.append("entry.YOUR_NAME_ENTRY_ID", name);
+    data.append("entry.YOUR_MOBILE_ENTRY_ID", mobile);
+
+    fetch(formURL, { method: "POST", body: data, mode: "no-cors" })
+      .then(() => {
+          document.getElementById('formDiv').classList.add('hidden');
+          document.getElementById('infoDiv').classList.remove('hidden');
+      });
+}
+</script>
+
+</body>
+</html>
